@@ -158,6 +158,9 @@ select:focus, input:focus, button:focus, summary:focus {
 .btn-secondary:hover { background: var(--bg-hover); }
 /* visual cue that a search term is actively constraining results */
 #f-search:not(:placeholder-shown) { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+/* visual cue that a non-default filter is active — silent constraints caused
+   the "filters don't work" confusion; active filters must be visible at a glance */
+select.active-filter { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
 .match-count { font-size: 12px; color: var(--text-muted); padding-bottom: 6px; }
 
 /* ---------- table ---------- */

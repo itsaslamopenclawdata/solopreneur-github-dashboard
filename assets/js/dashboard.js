@@ -5,7 +5,7 @@
  * No build step, no dependencies, no browser-side GitHub API calls.
  */
 
-const BUILD = "1.0.2"; // bump on every deploy — visible in footer for cache verification
+const BUILD = "1.0.3"; // bump on every deploy — visible in footer for cache verification
 
 const CONFIG = {
   storageKey: "sgcc-v1",
@@ -331,6 +331,9 @@ function renderAll() {
   renderBody(rows);
   renderFeed();
   renderHeader();
+  // glow any filter that is silently constraining the view
+  document.getElementById("f-days").classList.toggle("active-filter", state.days !== "all");
+  document.getElementById("f-count").classList.toggle("active-filter", state.count !== "10");
   document.getElementById("match-count").textContent =
     `Showing ${rows.length} of ${total} matching · ${repos.length} total`;
 }

@@ -1,6 +1,18 @@
 {
- "generated_at": "2026-09-24T07:16:41.990321+00:00",
+ "generated_at": "2026-09-24T07:21:08.029396+00:00",
  "feed": [
+  {
+   "repo": "solopreneur-github-dashboard",
+   "date": "2026-09-24T07:20:55Z",
+   "message": "ux: highlight non-default filters (active filters glow blue)",
+   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/c68fc4d060622e09363412855599c082ddac1aa5"
+  },
+  {
+   "repo": "solopreneur-github-dashboard",
+   "date": "2026-09-24T07:16:48Z",
+   "message": "data: update dashboard datasets [skip ci]",
+   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/3f9512c706e38287e5e7b3fecc14e38edf04447d"
+  },
   {
    "repo": "solopreneur-github-dashboard",
    "date": "2026-09-24T07:15:53Z",
@@ -24,18 +36,6 @@
    "date": "2026-09-24T05:30:36Z",
    "message": "data: update dashboard datasets [skip ci]",
    "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/4ac8056cd0d41c25c12d412808e301e72a160e9b"
-  },
-  {
-   "repo": "solopreneur-github-dashboard",
-   "date": "2026-09-24T05:30:17Z",
-   "message": "fix: filter UX traps, fields panel overlay, error surfacing, null-safe sort",
-   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/48974b4399ba6f01a3121cdb4715b6ce36965289"
-  },
-  {
-   "repo": "solopreneur-github-dashboard",
-   "date": "2026-09-24T05:04:53Z",
-   "message": "data: update dashboard datasets [skip ci]",
-   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/7f917ed972e432c977282ed53ab4321542e75acc"
   },
   {
    "repo": "GrowthHermesCompany-VanguardAgent",

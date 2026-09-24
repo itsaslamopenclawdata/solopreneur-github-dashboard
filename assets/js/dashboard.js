@@ -48,6 +48,10 @@ const SEARCH_KEYS = [
   "recent_functionality", "recent_commit_summary", "latest_commit",
 ];
 
+const COUNT_OPTIONS = new Set(["10", "15", "20", "25", "50", "all"]);
+const DAYS_OPTIONS = new Set(["1", "2", "5", "10", "15", "20", "30", "all"]);
+const SORT_OPTIONS = new Set(FIELDS.filter(f => f.sortable).map(f => f.key));
+
 const defaults = {
   count: "10",
   days: "all",
@@ -67,20 +71,32 @@ let meta = null;
 /* ------------------------------------------------------------ state */
 
 function loadState() {
+  const valid = { ...defaults };
   try {
     const raw = JSON.parse(localStorage.getItem(CONFIG.storageKey));
-    if (!raw || typeof raw !== "object") return { ...defaults };
-    return {
-      ...defaults, ...raw,
-      visible: Array.isArray(raw.visible) && raw.visible.length ? raw.visible : defaults.visible,
-    };
-  } catch {
-    return { ...defaults };
-  }
+    if (!raw || typeof raw !== "object") return valid;
+    // Validate every persisted value: a stale/corrupt entry must never
+    // silently constrain the dashboard (the "filters don't work" trap).
+    if (COUNT_OPTIONS.has(String(raw.count))) valid.count = String(raw.count);
+    if (DAYS_OPTIONS.has(String(raw.days))) valid.days = String(raw.days);
+    if (typeof raw.includeArchived === "boolean") valid.includeArchived = raw.includeArchived;
+    if (typeof raw.includeForks === "boolean") valid.includeForks = raw.includeForks;
+    if (SORT_OPTIONS.has(raw.sortKey)) valid.sortKey = raw.sortKey;
+    if (raw.sortDir === 1 || raw.sortDir === -1) valid.sortDir = raw.sortDir;
+    if (Array.isArray(raw.visible) && raw.visible.length) {
+      const known = new Set(FIELDS.map(f => f.key));
+      valid.visible = raw.visible.filter(k => known.has(k));
+      if (!valid.visible.length) valid.visible = defaults.visible;
+    }
+    // NOTE: `search` is deliberately NOT persisted — spec §31 doesn't list it,
+    // and a leftover search term makes every other filter look broken.
+  } catch { /* corrupted storage -> defaults */ }
+  return valid;
 }
 
 function saveState() {
-  localStorage.setItem(CONFIG.storageKey, JSON.stringify(state));
+  const { search, ...persist } = state; // search is session-only, never persisted
+  localStorage.setItem(CONFIG.storageKey, JSON.stringify(persist));
 }
 
 /* ---------------------------------------------------------- helpers */
@@ -140,20 +156,23 @@ function filteredRows() {
     }
     return true;
   });
+  const total = rows.length;
 
   const k = state.sortKey;
   const dir = state.sortDir;
+  const numeric = typeof (rows.find(r => r[k] !== null && r[k] !== undefined) || {})[k] === "number";
   rows.sort((a, b) => {
-    const va = a[k] ?? "";
-    const vb = b[k] ?? "";
-    const cmp = (typeof va === "number" && typeof vb === "number")
-      ? va - vb
-      : String(va).localeCompare(String(vb));
+    const va = a[k];
+    const vb = b[k];
+    // Null/unknown values always sink to the bottom, both directions.
+    if (va === null || va === undefined) return vb === null || vb === undefined ? 0 : 1;
+    if (vb === null || vb === undefined) return -1;
+    const cmp = numeric ? va - vb : String(va).localeCompare(String(vb));
     return cmp * dir;
   });
 
-  if (state.count !== "all") rows = rows.slice(0, Number(state.count));
-  return rows;
+  const page = state.count !== "all" ? rows.slice(0, Number(state.count)) : rows;
+  return { rows: page, total };
 }
 
 /* ------------------------------------------------------------ render */
@@ -306,16 +325,10 @@ function renderHeader() {
 
 function renderAll() {
   renderHead();
-  const rows = filteredRows();
+  const { rows, total } = filteredRows();
   renderBody(rows);
   renderFeed();
   renderHeader();
-  const total = repos.filter(r =>
-    (state.includeArchived || !r.is_archived) && (state.includeForks || !r.is_fork) &&
-    (state.days === "all" || (r.days_since_push !== null && r.days_since_push <= Number(state.days))) &&
-    (!state.search.trim() || SEARCH_KEYS.map(k => (Array.isArray(r[k]) ? r[k].join(" ") : r[k]) || "")
-      .join(" ").toLowerCase().includes(state.search.trim().toLowerCase()))
-  ).length;
   document.getElementById("match-count").textContent =
     `Showing ${rows.length} of ${total} matching · ${repos.length} total`;
 }
@@ -363,7 +376,21 @@ function wireControls() {
     debounce = setTimeout(() => { state.search = search.value; saveState(); renderAll(); }, 150);
   });
 
-  document.getElementById("csv-btn").addEventListener("click", () => exportCSV(filteredRows()));
+  document.getElementById("csv-btn").addEventListener("click", () => exportCSV(filteredRows().rows));
+
+  document.getElementById("reset-btn").addEventListener("click", () => {
+    state = {
+      ...defaults,
+      visible: state.visible, // keep the user's column choices — reset only filters
+    };
+    saveState();
+    count.value = state.count;
+    days.value = state.days;
+    search.value = "";
+    archived.checked = state.includeArchived;
+    forks.checked = state.includeForks;
+    renderAll();
+  });
 }
 
 /* ------------------------------------------------------------ init */
@@ -381,12 +408,40 @@ async function init() {
     const reposData = await reposRes.json();
     feed = activityRes.ok ? (await activityRes.json()).feed || [] : [];
     meta = metaRes.ok ? await metaRes.json() : null;
+    if (!meta && reposData.generated_at) {
+      // metadata.json unavailable but repo data loaded — synthesize minimal meta
+      meta = { generated_at: reposData.generated_at, user: reposData.user,
+               repo_count: (reposData.repos || []).length, status: "partial", errors: [] };
+    }
     repos = reposData.repos || [];
   } catch (err) {
     console.error(err);
     meta = null;
+    showFatalError("Could not load dashboard data: " + err.message);
+    return;
   }
   renderAll();
 }
+
+function showFatalError(message) {
+  const freshness = document.getElementById("freshness");
+  if (freshness) freshness.textContent = "Dashboard data unavailable.";
+  const banner = document.getElementById("status-banner");
+  if (banner) {
+    banner.hidden = false;
+    banner.textContent = message +
+      " — the GitHub Action may not have run yet. Last known data keeps serving once available.";
+  }
+}
+
+// Surface unexpected runtime errors instead of failing silently.
+window.addEventListener("error", e => {
+  const banner = document.getElementById("status-banner");
+  if (banner && repos.length) {
+    banner.hidden = false;
+    banner.textContent = "A dashboard error occurred (" + (e.message || "unknown") +
+      "). Filters may be affected — try Reset filters or reload.";
+  }
+});
 
 document.addEventListener("DOMContentLoaded", init);

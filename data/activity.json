@@ -1,6 +1,36 @@
 {
- "generated_at": "2026-09-24T11:57:25.126852+00:00",
+ "generated_at": "2026-09-24T17:19:51.036921+00:00",
  "feed": [
+  {
+   "repo": "x-trends-briefs",
+   "date": "2026-09-24T13:40:30Z",
+   "message": "xintel: sumanth_077-jev-short-dup",
+   "url": "https://github.com/itsaslamopenclawdata/x-trends-briefs/commit/7667d8e32ab3fd4449f169441c752b8bb1051b4c"
+  },
+  {
+   "repo": "x-trends-briefs",
+   "date": "2026-09-24T13:27:00Z",
+   "message": "xintel: sumanth_077-jev-clearly-explained",
+   "url": "https://github.com/itsaslamopenclawdata/x-trends-briefs/commit/be7676a924ede7198f87a13941b58cd6681e6bbb"
+  },
+  {
+   "repo": "GrowthHermesDailyExecutionsLog",
+   "date": "2026-09-24T12:38:37Z",
+   "message": "daily(2026-09-24): autonomous execution plan — Aslam contribution <1% [day 42]",
+   "url": "https://github.com/itsaslamopenclawdata/GrowthHermesDailyExecutionsLog/commit/57e083b8fc6ec79ec6adc064b2630be50f4753b2"
+  },
+  {
+   "repo": "SystemBuildPlanner_Executions",
+   "date": "2026-09-24T12:27:27Z",
+   "message": "Add daily system design: W06-L06-D036-personal-knowledge-api",
+   "url": "https://github.com/itsaslamopenclawdata/SystemBuildPlanner_Executions/commit/b900f042defbfc23f244e567c604b88b7a0879d2"
+  },
+  {
+   "repo": "solopreneur-github-dashboard",
+   "date": "2026-09-24T11:57:34Z",
+   "message": "data: update dashboard datasets [skip ci]",
+   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/006fc6217167c2945930cf5c478f11200b5b09b1"
+  },
   {
    "repo": "GrowthHermesCompany-VanguardAgent",
    "date": "2026-09-24T08:30:17Z",
@@ -38,12 +68,6 @@
    "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/2683483be2cacc60e1fc1beb03aecc071dcb0fe4"
   },
   {
-   "repo": "solopreneur-github-dashboard",
-   "date": "2026-09-24T07:20:55Z",
-   "message": "ux: highlight non-default filters (active filters glow blue)",
-   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/c68fc4d060622e09363412855599c082ddac1aa5"
-  },
-  {
    "repo": "x-trends-briefs",
    "date": "2026-09-24T05:44:45Z",
    "message": "xintel: eng_khairallah1-jev-engineering",
@@ -72,18 +96,6 @@
    "date": "2026-09-23T06:24:33Z",
    "message": "xintel: sprytixl-context-graph-85pct",
    "url": "https://github.com/itsaslamopenclawdata/x-trends-briefs/commit/3c632292a9719d19b4afec9631c05c8d76f272cf"
-  },
-  {
-   "repo": "x-trends-briefs",
-   "date": "2026-09-23T06:16:28Z",
-   "message": "xintel: 0xwast3-kimi-memory-engineering",
-   "url": "https://github.com/itsaslamopenclawdata/x-trends-briefs/commit/c61d7b8b1d27e3aaa5a0779fa789fac2577cc00b"
-  },
-  {
-   "repo": "x-trends-briefs",
-   "date": "2026-09-23T06:08:50Z",
-   "message": "xintel: gippp69-astra-agent-back-office",
-   "url": "https://github.com/itsaslamopenclawdata/x-trends-briefs/commit/583f25c24fd12cc269baa1c8355e3ddfec52722e"
   },
   {
    "repo": "GrowthHermesCompany-VanguardAgent",
@@ -146,22 +158,10 @@
    "url": "https://github.com/itsaslamopenclawdata/GrowthHermesDailyExecutionsLog/commit/551946f7db29a7c703e263fb7478978b64d9ae24"
   },
   {
-   "repo": "SystemBuildPlanner_Executions",
-   "date": "2026-09-17T11:30:01Z",
-   "message": "Add daily system design: W05-L05-D029-onboarding-crew",
-   "url": "https://github.com/itsaslamopenclawdata/SystemBuildPlanner_Executions/commit/c85c2bf6c401401911d14b0ff470f8506e0c6537"
-  },
-  {
    "repo": "GrowthHermesDailyExecutionsLog",
    "date": "2026-09-11T15:53:34Z",
    "message": "daily(2026-09-11): autonomous execution plan — Aslam contribution <1% [day 29]",
    "url": "https://github.com/itsaslamopenclawdata/GrowthHermesDailyExecutionsLog/commit/5d867e5188553834bf083a0452b60b72d9ea5bc1"
-  },
-  {
-   "repo": "GrowthHermesDailyExecutionsLog",
-   "date": "2026-09-11T08:01:49Z",
-   "message": "daily(2026-09-11): autonomous execution plan — Aslam contribution <1% [day 29]",
-   "url": "https://github.com/itsaslamopenclawdata/GrowthHermesDailyExecutionsLog/commit/f994c4396c16a6c24240e00dd8336734d0c055a3"
   },
   {
    "repo": "GrowthHermesCompany-LearnfromText",

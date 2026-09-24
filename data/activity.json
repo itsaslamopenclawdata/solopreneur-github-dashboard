@@ -1,6 +1,24 @@
 {
- "generated_at": "2026-09-24T05:42:22.423757+00:00",
+ "generated_at": "2026-09-24T07:16:41.990321+00:00",
  "feed": [
+  {
+   "repo": "solopreneur-github-dashboard",
+   "date": "2026-09-24T07:15:53Z",
+   "message": "feat: in-browser diagnostics (?debug=1), build stamp, cache-busted js ref",
+   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/6a41d1172dfe688a3ab9fe3a32337ac24c9a748d"
+  },
+  {
+   "repo": "x-trends-briefs",
+   "date": "2026-09-24T05:44:45Z",
+   "message": "xintel: eng_khairallah1-jev-engineering",
+   "url": "https://github.com/itsaslamopenclawdata/x-trends-briefs/commit/d9430d232029f38438d3f1585fd05dc578b7684e"
+  },
+  {
+   "repo": "solopreneur-github-dashboard",
+   "date": "2026-09-24T05:42:30Z",
+   "message": "data: update dashboard datasets [skip ci]",
+   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/4c47d4923029ed8c6181b405d5013598f47bc143"
+  },
   {
    "repo": "solopreneur-github-dashboard",
    "date": "2026-09-24T05:30:36Z",
@@ -18,18 +36,6 @@
    "date": "2026-09-24T05:04:53Z",
    "message": "data: update dashboard datasets [skip ci]",
    "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/7f917ed972e432c977282ed53ab4321542e75acc"
-  },
-  {
-   "repo": "solopreneur-github-dashboard",
-   "date": "2026-09-24T04:44:30Z",
-   "message": "data: update dashboard datasets [skip ci]",
-   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/261cc21244f8c9cdf19388097318e8f70515ab9a"
-  },
-  {
-   "repo": "solopreneur-github-dashboard",
-   "date": "2026-09-24T04:43:32Z",
-   "message": "data: update dashboard datasets [skip ci]",
-   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/97b7a9b9003a7f5147287e5a847386fdd884beb8"
   },
   {
    "repo": "GrowthHermesCompany-VanguardAgent",
@@ -72,12 +78,6 @@
    "date": "2026-09-23T06:01:01Z",
    "message": "xintel: beamnxw-nine-messages-ai-employee",
    "url": "https://github.com/itsaslamopenclawdata/x-trends-briefs/commit/4189fcac1484426d87e972157e7ade278c4597b5"
-  },
-  {
-   "repo": "x-trends-briefs",
-   "date": "2026-09-23T05:48:26Z",
-   "message": "xintel: 0xchromium-astra-sites-10k-mrr",
-   "url": "https://github.com/itsaslamopenclawdata/x-trends-briefs/commit/c91ce4706d80e34d86e1aa58b49e7857af1c6df9"
   },
   {
    "repo": "GrowthHermesCompany-VanguardAgent",

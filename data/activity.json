@@ -1,6 +1,12 @@
 {
- "generated_at": "2026-09-24T17:19:51.036921+00:00",
+ "generated_at": "2026-09-24T21:36:29.725336+00:00",
  "feed": [
+  {
+   "repo": "solopreneur-github-dashboard",
+   "date": "2026-09-24T17:19:59Z",
+   "message": "data: update dashboard datasets [skip ci]",
+   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/2afa4f1102a7c64972aae164d806eebdefb51b3c"
+  },
   {
    "repo": "x-trends-briefs",
    "date": "2026-09-24T13:40:30Z",
@@ -60,12 +66,6 @@
    "date": "2026-09-24T07:32:38Z",
    "message": "xintel: free_ai_guides-five-layers",
    "url": "https://github.com/itsaslamopenclawdata/x-trends-briefs/commit/2d55841aa2fb7436a634f38c51d74831a216b5a4"
-  },
-  {
-   "repo": "solopreneur-github-dashboard",
-   "date": "2026-09-24T07:21:18Z",
-   "message": "data: update dashboard datasets [skip ci]",
-   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/2683483be2cacc60e1fc1beb03aecc071dcb0fe4"
   },
   {
    "repo": "x-trends-briefs",

@@ -5,7 +5,7 @@
  * No build step, no dependencies, no browser-side GitHub API calls.
  */
 
-const BUILD = "1.0.3"; // bump on every deploy — visible in footer for cache verification
+const BUILD = "1.0.4"; // bump on every deploy — visible in footer for cache verification
 
 const CONFIG = {
   storageKey: "sgcc-v1",
@@ -404,10 +404,12 @@ async function init() {
   wireControls();
   renderFieldsPanel();
   try {
+    // cache: "no-store" — GitHub Pages allows 10-min caching of JSON; a daily
+    // dashboard must never render a stale dataset (proven user-visible bug).
     const [reposRes, activityRes, metaRes] = await Promise.all([
-      fetch("data/repos.json"),
-      fetch("data/activity.json"),
-      fetch("data/metadata.json"),
+      fetch("data/repos.json", { cache: "no-store" }),
+      fetch("data/activity.json", { cache: "no-store" }),
+      fetch("data/metadata.json", { cache: "no-store" }),
     ]);
     if (!reposRes.ok) throw new Error(`repos.json HTTP ${reposRes.status}`);
     const reposData = await reposRes.json();

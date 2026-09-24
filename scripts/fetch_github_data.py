@@ -177,17 +177,16 @@ def main():
     errors = []
 
     repos = fetch_all_repos(USER, TOKEN)
-    active = sorted((r for r in repos if not r.get("archived")),
-                    key=lambda r: r.get("pushed_at") or "", reverse=True)
+    all_sorted = sorted(repos, key=lambda r: r.get("pushed_at") or "", reverse=True)
     cutoff = now - timedelta(days=DETAIL_WINDOW_DAYS)
     detail = set()
-    for r in active[:MAX_DETAIL_REPOS]:
+    for r in [x for x in all_sorted if not x.get("archived")][:MAX_DETAIL_REPOS]:
         p = r.get("pushed_at")
         if p and datetime.fromisoformat(p.replace("Z", "+00:00")) >= cutoff:
             detail.add(r["full_name"])
 
     records, feed, daily_counts = [], [], {}
-    for r in active:
+    for r in all_sorted:
         commits, files, readme = [], [], None
         if r["full_name"] in detail:
             try:
@@ -223,7 +222,7 @@ def main():
     dump("history.json", merge_history(history, daily_counts, today))
     dump("metadata.json", {
         "generated_at": now.isoformat(), "user": USER, "repo_count": len(records),
-        "archived_excluded": len(repos) - len(active), "detail_repos": len(detail),
+        "archived_count": sum(1 for r in repos if r.get("archived")), "detail_repos": len(detail),
         "status": "ok" if not errors else "partial", "errors": errors[:20],
     })
     print(f"OK: {len(records)} repos ({len(detail)} with detail), "

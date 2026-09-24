@@ -1,6 +1,36 @@
 {
- "generated_at": "2026-09-24T04:39:06.283411+00:00",
+ "generated_at": "2026-09-24T04:43:22.947608+00:00",
  "feed": [
+  {
+   "repo": "solopreneur-github-dashboard",
+   "date": "2026-09-24T04:42:56Z",
+   "message": "docs+ci: README, update workflow, implementation plan",
+   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/78918272ec7525c7505c33c00227d77aba59ecdc"
+  },
+  {
+   "repo": "solopreneur-github-dashboard",
+   "date": "2026-09-24T04:42:10Z",
+   "message": "feat: dashboard frontend MVP (filters, fields, sort, CSV, feed)",
+   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/506d6e0c0783e098d4eae445fd2739599c41fa78"
+  },
+  {
+   "repo": "solopreneur-github-dashboard",
+   "date": "2026-09-24T04:39:19Z",
+   "message": "feat: live data fetch + seed datasets",
+   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/cb0ffb2fb73446e05bb897e14af41c0182cd631e"
+  },
+  {
+   "repo": "solopreneur-github-dashboard",
+   "date": "2026-09-24T04:37:12Z",
+   "message": "feat: data pipeline pure functions with tests",
+   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/d3b944042c907c1f3f5c02e3e3b7da2f053b3eea"
+  },
+  {
+   "repo": "solopreneur-github-dashboard",
+   "date": "2026-09-24T04:35:22Z",
+   "message": "chore: scaffold solopreneur-github-dashboard",
+   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/f44b0bd589fe087a5f35016ee5fcd34ca83d213d"
+  },
   {
    "repo": "GrowthHermesCompany-VanguardAgent",
    "date": "2026-09-24T02:00:28Z",

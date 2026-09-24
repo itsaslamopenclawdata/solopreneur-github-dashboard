@@ -5,6 +5,8 @@
  * No build step, no dependencies, no browser-side GitHub API calls.
  */
 
+const BUILD = "1.0.2"; // bump on every deploy — visible in footer for cache verification
+
 const CONFIG = {
   storageKey: "sgcc-v1",
   staleHours: 12,
@@ -420,7 +422,10 @@ async function init() {
     showFatalError("Could not load dashboard data: " + err.message);
     return;
   }
+  const stamp = document.getElementById("build-stamp");
+  if (stamp) stamp.textContent = "v" + BUILD;
   renderAll();
+  if (new URLSearchParams(location.search).has("debug")) runDiagnostics();
 }
 
 function showFatalError(message) {
@@ -445,3 +450,47 @@ window.addEventListener("error", e => {
 });
 
 document.addEventListener("DOMContentLoaded", init);
+
+/* ------------------------------------------------------ diagnostics
+ * Open the dashboard with ?debug=1 — the page runs the filter test
+ * suite in YOUR browser and prints results on screen. Used to verify
+ * deployed behavior and hunt environment-specific issues. */
+async function runDiagnostics() {
+  const out = [`BUILD ${BUILD}`, `UserAgent: ${navigator.userAgent}`];
+  const rowCount = () => document.querySelectorAll("#repo-body tr").length;
+  const fire = (el, type) => el.dispatchEvent(new Event(type, { bubbles: true }));
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  const el = id => document.getElementById(id);
+  try {
+    out.push(`data: repos=${repos.length} feed=${feed.length} meta=${meta ? meta.generated_at : "NULL"}`);
+    out.push(`localStorage raw: ${localStorage.getItem(CONFIG.storageKey) || "(empty)"}`);
+    out.push(`loaded state: ${JSON.stringify(state)}`);
+    out.push(`T0 initial rows=${rowCount()}`);
+    el("f-days").value = "1"; fire(el("f-days"), "change");
+    out.push(`T1 days=1 rows=${rowCount()}`);
+    el("f-days").value = "all"; fire(el("f-days"), "change");
+    el("f-count").value = "all"; fire(el("f-count"), "change");
+    out.push(`T2 count=all rows=${rowCount()}`);
+    el("f-count").value = "10"; fire(el("f-count"), "change");
+    el("f-search").value = "the"; fire(el("f-search"), "input");
+    await sleep(300);
+    out.push(`T3 search="the" rows=${rowCount()}`);
+    el("reset-btn").click();
+    await sleep(200);
+    out.push(`T4 after-reset rows=${rowCount()} searchbox=[${el("f-search").value}]`);
+    // listener sanity: does a change event actually reach a handler?
+    let heard = 0;
+    el("f-count").addEventListener("change", () => heard++);
+    fire(el("f-count"), "change");
+    out.push(`T5 event listener fired: ${heard === 1 ? "YES" : "NO"}`);
+    out.push("DIAGNOSTICS COMPLETE — all should match expectations above.");
+  } catch (err) {
+    out.push(`DIAGNOSTICS EXCEPTION: ${err.message}`);
+  }
+  const pre = document.createElement("pre");
+  pre.id = "debug-panel";
+  pre.style.cssText = "margin:12px 22px;padding:12px;background:#161b22;border:1px solid #f0883e;" +
+    "border-radius:6px;color:#e6edf3;font-size:12px;white-space:pre-wrap;";
+  pre.textContent = out.join("\n");
+  document.querySelector("main").prepend(pre);
+}

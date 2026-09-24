@@ -1,6 +1,12 @@
 {
- "generated_at": "2026-09-24T07:34:11.531043+00:00",
+ "generated_at": "2026-09-24T07:47:09.670611+00:00",
  "feed": [
+  {
+   "repo": "solopreneur-github-dashboard",
+   "date": "2026-09-24T07:34:19Z",
+   "message": "data: update dashboard datasets [skip ci]",
+   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/6b636f5997dd4cc96d60f9711bfcba46a1c732b0"
+  },
   {
    "repo": "solopreneur-github-dashboard",
    "date": "2026-09-24T07:33:54Z",
@@ -30,12 +36,6 @@
    "date": "2026-09-24T07:16:48Z",
    "message": "data: update dashboard datasets [skip ci]",
    "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/3f9512c706e38287e5e7b3fecc14e38edf04447d"
-  },
-  {
-   "repo": "solopreneur-github-dashboard",
-   "date": "2026-09-24T07:15:53Z",
-   "message": "feat: in-browser diagnostics (?debug=1), build stamp, cache-busted js ref",
-   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/6a41d1172dfe688a3ab9fe3a32337ac24c9a748d"
   },
   {
    "repo": "x-trends-briefs",

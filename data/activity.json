@@ -1,6 +1,12 @@
 {
- "generated_at": "2026-09-25T17:19:12.641149+00:00",
+ "generated_at": "2026-09-25T21:40:38.784967+00:00",
  "feed": [
+  {
+   "repo": "solopreneur-github-dashboard",
+   "date": "2026-09-25T17:19:20Z",
+   "message": "data: update dashboard datasets [skip ci]",
+   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/f06c83b938af3de1f6d152c40a651e24ddef4ddd"
+  },
   {
    "repo": "solopreneur-github-dashboard",
    "date": "2026-09-25T11:59:37Z",
@@ -78,12 +84,6 @@
    "date": "2026-09-24T12:27:27Z",
    "message": "Add daily system design: W06-L06-D036-personal-knowledge-api",
    "url": "https://github.com/itsaslamopenclawdata/SystemBuildPlanner_Executions/commit/b900f042defbfc23f244e567c604b88b7a0879d2"
-  },
-  {
-   "repo": "solopreneur-github-dashboard",
-   "date": "2026-09-24T11:57:34Z",
-   "message": "data: update dashboard datasets [skip ci]",
-   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/006fc6217167c2945930cf5c478f11200b5b09b1"
   },
   {
    "repo": "GrowthHermesCompany-VanguardAgent",

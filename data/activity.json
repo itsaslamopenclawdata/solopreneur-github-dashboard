@@ -1,6 +1,30 @@
 {
- "generated_at": "2026-09-24T21:36:29.725336+00:00",
+ "generated_at": "2026-09-25T05:05:45.940033+00:00",
  "feed": [
+  {
+   "repo": "GrowthHermesDailyExecutionsLog",
+   "date": "2026-09-25T03:01:46Z",
+   "message": "daily(2026-09-25): autonomous execution plan — Aslam contribution <1% [day 43]",
+   "url": "https://github.com/itsaslamopenclawdata/GrowthHermesDailyExecutionsLog/commit/de242e65d24c15c502fdf02a8ed413a4f2666199"
+  },
+  {
+   "repo": "GrowthHermesCompany-VanguardAgent",
+   "date": "2026-09-25T03:01:36Z",
+   "message": "daily(delivery): pulse for 2026-09-25",
+   "url": "https://github.com/itsaslamopenclawdata/GrowthHermesCompany-VanguardAgent/commit/0bbc975fcac800153c1dac670d6b0625a3408911"
+  },
+  {
+   "repo": "GrowthHermesCompany-VanguardAgent",
+   "date": "2026-09-25T02:00:06Z",
+   "message": "daily(learning): brief for 2026-09-25",
+   "url": "https://github.com/itsaslamopenclawdata/GrowthHermesCompany-VanguardAgent/commit/0582485454e8fcf9d1acc5e5e8bc9584944a5a0e"
+  },
+  {
+   "repo": "solopreneur-github-dashboard",
+   "date": "2026-09-24T21:36:39Z",
+   "message": "data: update dashboard datasets [skip ci]",
+   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/081f2afcb1835599045987f1740bb2513b4475ee"
+  },
   {
    "repo": "solopreneur-github-dashboard",
    "date": "2026-09-24T17:19:59Z",
@@ -56,12 +80,6 @@
    "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/6b636f5997dd4cc96d60f9711bfcba46a1c732b0"
   },
   {
-   "repo": "solopreneur-github-dashboard",
-   "date": "2026-09-24T07:33:54Z",
-   "message": "fix: bypass HTTP cache for data fetches (no-store)",
-   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/cac8163f92809bb74ffdf27bb950fc572b1a68e9"
-  },
-  {
    "repo": "x-trends-briefs",
    "date": "2026-09-24T07:32:38Z",
    "message": "xintel: free_ai_guides-five-layers",
@@ -98,22 +116,10 @@
    "url": "https://github.com/itsaslamopenclawdata/x-trends-briefs/commit/3c632292a9719d19b4afec9631c05c8d76f272cf"
   },
   {
-   "repo": "GrowthHermesCompany-VanguardAgent",
-   "date": "2026-09-23T02:00:07Z",
-   "message": "daily(learning): brief for 2026-09-23",
-   "url": "https://github.com/itsaslamopenclawdata/GrowthHermesCompany-VanguardAgent/commit/eb59144629f3ceba9589eacb896783b018965c78"
-  },
-  {
    "repo": "GrowthHermesDailyExecutionsLog",
    "date": "2026-09-22T15:52:00Z",
    "message": "daily(2026-09-22): autonomous execution plan — Aslam contribution <1% [day 40]",
    "url": "https://github.com/itsaslamopenclawdata/GrowthHermesDailyExecutionsLog/commit/388d0be0754bffd623f573290c3d945c4c581016"
-  },
-  {
-   "repo": "GrowthHermesCompany-VanguardAgent",
-   "date": "2026-09-22T15:48:19Z",
-   "message": "daily(delivery): pulse for 2026-09-22",
-   "url": "https://github.com/itsaslamopenclawdata/GrowthHermesCompany-VanguardAgent/commit/cacbfb466bb1072284f35657547a341b38fc555e"
   },
   {
    "repo": "SystemBuildPlanner_Executions",
@@ -156,12 +162,6 @@
    "date": "2026-09-18T02:04:52Z",
    "message": "daily(2026-09-18): autonomous execution plan — Aslam contribution <1% [day 36]",
    "url": "https://github.com/itsaslamopenclawdata/GrowthHermesDailyExecutionsLog/commit/551946f7db29a7c703e263fb7478978b64d9ae24"
-  },
-  {
-   "repo": "GrowthHermesDailyExecutionsLog",
-   "date": "2026-09-11T15:53:34Z",
-   "message": "daily(2026-09-11): autonomous execution plan — Aslam contribution <1% [day 29]",
-   "url": "https://github.com/itsaslamopenclawdata/GrowthHermesDailyExecutionsLog/commit/5d867e5188553834bf083a0452b60b72d9ea5bc1"
   },
   {
    "repo": "GrowthHermesCompany-LearnfromText",

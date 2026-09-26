@@ -1,6 +1,18 @@
 {
- "generated_at": "2026-09-26T11:34:08.830157+00:00",
+ "generated_at": "2026-09-26T16:30:50.826738+00:00",
  "feed": [
+  {
+   "repo": "SystemBuildPlanner_Executions",
+   "date": "2026-09-26T13:51:42Z",
+   "message": "Add daily system design: W06-L06-D038-bookmark-manager-api",
+   "url": "https://github.com/itsaslamopenclawdata/SystemBuildPlanner_Executions/commit/c21e15d8f7585d0fd9afdffdc8d727009ff5b360"
+  },
+  {
+   "repo": "solopreneur-github-dashboard",
+   "date": "2026-09-26T11:34:16Z",
+   "message": "data: update dashboard datasets [skip ci]",
+   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/6a229282dcc93965de7e506cdf58bb60a62dc350"
+  },
   {
    "repo": "GrowthHermesCompany-VanguardAgent",
    "date": "2026-09-26T08:30:11Z",
@@ -54,12 +66,6 @@
    "date": "2026-09-25T08:30:09Z",
    "message": "daily(delivery): pulse for 2026-09-25",
    "url": "https://github.com/itsaslamopenclawdata/GrowthHermesCompany-VanguardAgent/commit/5602a6436c77db853c45019b08b68e2804982d4a"
-  },
-  {
-   "repo": "solopreneur-github-dashboard",
-   "date": "2026-09-25T05:05:58Z",
-   "message": "data: update dashboard datasets [skip ci]",
-   "url": "https://github.com/itsaslamopenclawdata/solopreneur-github-dashboard/commit/ca5e63dab19fe8b4f018bee6b56b8b3fee275828"
   },
   {
    "repo": "GrowthHermesDailyExecutionsLog",
@@ -132,12 +138,6 @@
    "date": "2026-09-22T12:22:52Z",
    "message": "Add daily system design: W05-L05-D034-project-planning-crew",
    "url": "https://github.com/itsaslamopenclawdata/SystemBuildPlanner_Executions/commit/1ee4529defbc926f0c2268dd40f7ca5c8c28f894"
-  },
-  {
-   "repo": "SystemBuildPlanner_Executions",
-   "date": "2026-09-21T11:30:02Z",
-   "message": "Add daily system design: W05-L05-D033-design-critique-crew",
-   "url": "https://github.com/itsaslamopenclawdata/SystemBuildPlanner_Executions/commit/abdeda80063ed20c8c8b87bb76364de2b2febd18"
   },
   {
    "repo": "GrowthCompany_JevOutputs",
